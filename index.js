@@ -12,7 +12,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 
 
 try {
-    mongoose.connect(MONGODB_URI)
+    mongoose.connect('mongodb+srv://arjuntudu:Redhawse*1@cluster0.0ttkmlw.mongodb.net/?retryWrites=true&w=majority/db_1')
 }catch(err){
     console.log("mongoose connection error")
 }
