@@ -4,14 +4,15 @@ const cors = require("cors")
 const dotenv = require("dotenv");
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 dotenv.config();
 
-const MONGODB = process.env.MONGODB
+const MONGODB_URI = process.env.MONGODB_URI
 
 
 try {
-    mongoose.connect(MONGODB)
+    mongoose.connect(MONGODB_URI)
 }catch(err){
     console.log("mongoose connection error")
 }
