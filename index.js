@@ -4,13 +4,7 @@ const cors = require("cors")
 const dotenv = require("dotenv");
 const app = express();
 
-app.use(cors(
-    {
-        origin: ["https://verce-l-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors());
 app.use(express.json());
 dotenv.config();
 
@@ -22,9 +16,6 @@ try {
     console.log("mongoose connection error")
 }
 
-
-
-  
 
 const User = mongoose.model("collection_1",{
    
