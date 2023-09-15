@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors")
 const dotenv = require("dotenv");
 const app = express();
+const bodyParser = require('body-parser');
+const { urlencoded, json } = require('body-parser');
 
 app.use(cors(
     {
@@ -22,6 +24,8 @@ try {
     console.log("mongoose connection error")
 }
 
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 const User = mongoose.model("collection_1",{
    
