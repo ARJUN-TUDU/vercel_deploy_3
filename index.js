@@ -37,7 +37,7 @@ const User = mongoose.model("collection_1",{
 
 
 
-app.use("/",async (req,res)=>{
+app.get("/",async (req,res)=>{
    
      try {
 
@@ -52,6 +52,12 @@ app.use("/",async (req,res)=>{
      }
 
 })
+
+app.get('*',(req,res,next)=>{
+    res.status(200).json({
+      message:'succeess'
+    })
+  })
 
 
 app.listen(9000,(err)=>{
