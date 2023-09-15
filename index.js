@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ["https://verce-l-frontend-ogwop7wdo-arjun-tudu.vercel.app"],
+        origin: ["http://localhost:3000"],
         methods: ["POST", "GET"],
         credentials: true
     }
