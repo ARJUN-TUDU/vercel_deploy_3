@@ -6,13 +6,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const { urlencoded, json } = require('body-parser');
 
-app.use(cors(
-    {
-        origin: ["https://verce-l-frontend.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
+app.use(cors());
 app.use(express.json());
 dotenv.config();
 
