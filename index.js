@@ -23,7 +23,7 @@ try {
 }
 
 
-if (process.env.NODE_ENV === "production") {
+
     const path = require("path");
     app.use(express.static(path.resolve(__dirname, 'frontend', 'build')));
     app.get("*", (req, res) => {
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === "production") {
             }
         });
     })
-}
+
 
 const User = mongoose.model("collection_1",{
    
