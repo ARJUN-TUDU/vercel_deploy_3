@@ -3,7 +3,14 @@ const mongoose = require("mongoose");
 const cors = require("cors")
 const dotenv = require("dotenv");
 const app = express();
-app.options('*', cors());
+
+app.use(cors(
+    {
+        origin: ["https://verce-l-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json());
 dotenv.config();
 
