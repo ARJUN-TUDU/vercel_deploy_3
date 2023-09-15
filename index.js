@@ -24,16 +24,7 @@ try {
 
 
 
-    const path = require("path");
-    app.use(express.static(path.resolve(__dirname, 'frontend', 'build')));
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err) {
-            if(err) {
-                res.status(500).send(err)
-            }
-        });
-    })
-
+  
 
 const User = mongoose.model("collection_1",{
    
