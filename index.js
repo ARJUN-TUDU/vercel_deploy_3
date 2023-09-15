@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const app = express();
 app.use(cors(
     {
-        origin: ["https://localhost:3000/"],
+        origin: ["http://localhost:3000/"],
         methods: ["POST", "GET"],
         credentials: true
     }
