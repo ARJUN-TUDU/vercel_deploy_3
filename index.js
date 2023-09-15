@@ -3,7 +3,13 @@ const mongoose = require("mongoose");
 const cors = require("cors")
 const dotenv = require("dotenv");
 const app = express();
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://localhost:3000/"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json());
 
 dotenv.config();
@@ -12,7 +18,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 
 
 try {
-    mongoose.connect('mongodb+srv://arjuntudu:Redhawse*1@cluster0.0ttkmlw.mongodb.net/?retryWrites=true&w=majority/db_1')
+    mongoose.connect(MONGODB_URI)
 }catch(err){
     console.log("mongoose connection error")
 }
